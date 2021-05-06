@@ -9,7 +9,7 @@ function CardRow(props) {
 
     // Get and show only cards per row
     var cards = props.rowCards.slice(0, cardsPerRow).map(card => {
-        return <Card card={card} onClickFunction={props.onClickFunction}/>
+        return <Card card={card}/>
     })
 
     return (

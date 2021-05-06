@@ -12,7 +12,7 @@ function GamePlayers(props) {
         <Grid container direction="column">
             { props.players.map((player, i) => {
                 return <div className={"player-card_"+i} active={player.active ? "true": "false"} key={"player-card_"+i}>
-                    <div className="points">{player.points}</div>
+                    <div className="points">{player.victoryPoints}</div>
                 </div>
             })}
         </Grid>

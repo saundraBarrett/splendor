@@ -3,7 +3,6 @@ import { START_GAME, REMOVE_TOKEN_FROM_BOARD, ADD_TOKEN_TO_BOARD, PLAYER_TAKE_CA
 import tokens from '../../common/tokens';
 import cards from '../../common/cards';
 import nobles from '../../common/nobles';
-import constants from '../../common/constants';
 import { getRandomInt, shuffleCards } from '../../helpers';
 import _ from 'lodash';
 
@@ -29,7 +28,7 @@ export default function game(state = initialState, action) {
           tokens: tokens(0, 0),
           gems: tokens(0, 0),
           reserved: [],
-          points: 0
+          victoryPoints: 0
         });
       })
 
@@ -67,13 +66,25 @@ export default function game(state = initialState, action) {
     }
     // Purchase card for player, remove card from board, give card to player
     case (PLAYER_TAKE_CARD): {
-      console.log('player can afford the card')
       // take card from board by removing from card array
-      console.log(action)
+      let cardIndex = _.findIndex(state.cards, function (card) { return card.id === action.card.id })
+      let gemIndex = _.findIndex(state.tokens, function (token) { return token.gem === action.card.gem })
+      console.log(action.card)
+      const cloneCards = [...state.cards]
+      cloneCards.splice(cardIndex, 1)
       // this should put a new card on the board - how do we preserve the location? 
       // add to players cards
-      // 
-      return state
+      return {
+        ...state,
+        cards: cloneCards,
+        players: state.players.map((player, i) => player.active ?
+          {
+            ...player,
+            gems: player.gems.map((gem, x) => x === gemIndex ? { ...gem, qty: gem.qty + 1 } : gem),
+            victoryPoints: player.victoryPoints + action.card.victoryPoints
+          }
+          : player)
+      }
     }
     // Player reserve card: remove gold token from board, add gold token to player
     // Add card to players reserved card and remove from deck

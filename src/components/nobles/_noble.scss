@@ -1,0 +1,12 @@
+.noble-container {
+    min-height: 20vh;
+    max-height: 20vh;
+    background: white;
+    border-radius: 10px;
+    background-image: url('../../assets/nobles/catherine_de_medici.jpeg');
+    background-size: 100%;
+    overflow: hidden;
+    > div {
+        padding: .5em;
+    }
+}

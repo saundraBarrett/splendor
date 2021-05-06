@@ -1,7 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
-body {
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+@import 'components/common/variables';
+
+html, body {
   font-family: 'Libre Baskerville', serif;
+  background: $tableGradient;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+#app {
+  height: 100%;
+  display: flex;
+}
+
+.overlay {
+  background-color: rgba(255,255,255,0.5);
+  font-weight: bold;
+}
+
 @import 'components/token/token';
 @import 'components/cards/card';
 @import 'components/game/game';
+@import 'components/nobles/noble';
+@import 'components/common//cardBadge';

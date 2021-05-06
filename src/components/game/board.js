@@ -14,10 +14,10 @@ function Board() {
             <Grid item xs={1}>
                 <GamePlayers/>
             </Grid>
-            <Grid item xs={9}>
+            <Grid item xs={10}>
                 <BoardCards/>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={1}>
                 <BoardTokens />
             </Grid>
         </Grid>

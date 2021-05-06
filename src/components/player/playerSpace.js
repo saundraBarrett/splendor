@@ -3,7 +3,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid/Grid';
 import PlayerTokens from './playerTokens';
-import { connect, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import _ from 'lodash';
 
 // find active player - because everyone is local right now, this is ok
@@ -14,12 +14,10 @@ const mapStateToProps = (state) => {
 
 // Render active player's space
 function PlayerSpace(props) {
-    const dispatch = useDispatch()
     return (
         <Grid container direction="row">
             <h2>{props.activePlayer.name}</h2>
-            <PlayerTokens tokens={props.activePlayer.tokens} />
-            <button className="end-turn" onClick={() => dispatch({type: 'END_PLAYER_TURN'})}>End Turn</button>
+            <PlayerTokens tokens={props.activePlayer.tokens} gems={props.activePlayer.gems} />
         </Grid>
     )
 }

@@ -1,5 +1,6 @@
 .card-container {
     min-height: 15vh;
+    border: solid 1px black;
     .victory-points {
         font-size: 3em;
     }
@@ -15,6 +16,21 @@
             align-items: center;
             .quantity {
                 color: white;
+            }
+            &.cost-RUBY {
+                background: red;
+            }
+            &.cost-SAPPHIRE {
+                background: blue;
+            }
+            &.cost-EMERALD {
+                background: green;
+            }
+            &.cost-DIAMOND {
+                background: white;
+            }
+            &.cost-ONYX {
+                background: black;
             }
         }
     }

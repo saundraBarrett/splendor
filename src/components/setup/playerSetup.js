@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormControl, Input, InputLabel } from '@material-ui/core';
+import { FormControl, Input, InputLabel, Grid, FormGroup } from '@material-ui/core';
 import _ from 'lodash';
 import playerTypes from '../../common/playerTypes';
 
@@ -19,7 +19,7 @@ const PlayerSetup = (props) => {
     }
 
     return (
-        <React.Fragment>
+        <FormGroup>
         <FormControl key={`player-type-${props.i}`} name={`player-type-${props.i}`} >
             <InputLabel id="label">Player Type:</InputLabel>
             <select id={props.i} value={0} onChange={(e) => props.onChangePlayerType(e)}>
@@ -28,11 +28,12 @@ const PlayerSetup = (props) => {
                 })}
             </select>
         </FormControl>
+        
         <FormControl key={`player-name-${props.i}`} name={`player-name-${props.i}`}>
             <InputLabel>Player Name:</InputLabel>
             <Input onChange={(e) => updatePlayerName(e)}></Input>
         </FormControl>
-        </React.Fragment>
+        </FormGroup>
     )
 }
 

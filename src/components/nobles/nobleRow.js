@@ -8,11 +8,13 @@ const mapStateToProps = (state) => {
     return { nobles: state.game.nobles }
 }
 
+// Show all nobles on board
 function NobleRow(props) {
     return (
-        <Grid container>{_.map(props.nobles, function (noble) {
-            return (<Noble noble={noble} />)
-        })}
+        <Grid container>
+            {_.map(props.nobles, function (noble) {
+                return <Noble noble={noble} />
+            })}
         </Grid>
     )
 

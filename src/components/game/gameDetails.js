@@ -7,12 +7,8 @@ function GameDetails() {
         .then(response => console.log(response))
         .then(error => console.log(error))
     })
-    
-//const bggResponse = parseBggXmlApi2ThingResponse(response);
-//const thing = bggResponse.item;
-//console.log(thing)
 
-    return (<div>He</div>)
+    return (<div></div>)
 }
 
 export default GameDetails;

@@ -1,0 +1,26 @@
+.card-badge {
+    border-radius: 5px;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: .25em;
+    &.ONYX {
+        background-color: $onyx;
+        color: white;
+    }
+    &.RUBY {
+        background-color: $ruby
+    }
+    &.SAPPHIRE {
+        background-color: $sapphire
+    }
+    &.EMERALD {
+        background-color: $emerald
+    }
+    &.GOLD {
+        background-color: $gold
+    }
+    &.DIAMOND {
+        background-color: $diamond;
+    }
+}

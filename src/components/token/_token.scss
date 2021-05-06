@@ -1,12 +1,16 @@
-@mixin tokenBorder($color) {
+@mixin tokenDesign($color) {
     border: 5px solid $color;
+    background-color: $color;
+    
   }
 .token-container {
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    border: solid 1px black;
     overflow: hidden;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    margin-top: 1em;
+    border: solid 2px black;
     .token {
         height: 100%;
         display: flex;
@@ -15,30 +19,29 @@
         background-size: 70%;
         background-repeat: no-repeat;
         background-position: center center;
-        background-color: #772f1a;
     }
     .token-DIAMOND {
-        @include tokenBorder(white);
+        @include tokenDesign($diamond);
         background-image: url("../../assets/gems/diamond.png");
     }
     .token-ONYX {
-        @include tokenBorder(black);
+        @include tokenDesign($onyx);
         background-image: url("../../assets/gems/onyx.png");
     }
     .token-RUBY {
-        @include tokenBorder(red);
+        @include tokenDesign($ruby);
         background-image: url("../../assets/gems/ruby.png")
     }
     .token-GOLD {
-        @include tokenBorder(gold);
+        @include tokenDesign($gold);
         background-image: url("../../assets/gems/gold.png")
     }
     .token-SAPPHIRE {
-        @include tokenBorder(blue);
+        @include tokenDesign($sapphire);
         background-image: url("../../assets/gems/sapphire.png");
     }
     .token-EMERALD {
-        @include tokenBorder(green);
+        @include tokenDesign($emerald);
         background-image: url("../../assets/gems/emerald.png");
     }
 }

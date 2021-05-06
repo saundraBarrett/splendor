@@ -18,23 +18,19 @@ function BoardTokens(props) {
             chips => [...chips, e]
         )
     };
-
+    // add tokens to players hand
     useEffect(() => {
         if (chips.length === 3 ) {
-            console.log('turn needs to be done')
             dispatch({type:'REMOVE_TOKEN_FROM_BOARD', chips})
             dispatch({type: 'END_PLAYER_TURN' })
             setChips([])
         }
-        // Update the document title using the browser API
-        console.log(`You clicked ${chips} times`);
       });
 
     return (
         <Grid container direction="column">
-            {chips >= 3 ? "Your turn is done" : 'Keep gping'}
             { props.gameTokens.map((token, i) => {
-                return (<TokenStack token={token} i={i} onClickFunction={updateChipCount}/>)
+                return (<TokenStack token={token} i={i} onClickFunction={updateChipCount} selectedChips={chips}/>)
             })}
         </Grid>
     )

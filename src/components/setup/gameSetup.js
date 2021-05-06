@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormControl, Input, InputLabel } from '@material-ui/core';
+import { FormControl, Input, InputLabel, Grid } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import _ from 'lodash';
 import PlayerSetup from './playerSetup';
@@ -8,7 +8,7 @@ import playerTypes from '../../common/playerTypes';
 // Set up game by getting number of players, 4 max
 function GameSetup(props) {
     // find local player type from player types
-    const localPlayer = _.find(playerTypes, { 'type': 'Local'});
+    const localPlayer = _.find(playerTypes, { 'type': 'Local' });
 
     // setting default players (2) to local type
     const defaultPlayers = [
@@ -28,7 +28,7 @@ function GameSetup(props) {
 
     // when updating player data, save state variable
     const doneUpdatingPlayer = player => {
-        let playerindex = _.findIndex(players, function(p) {
+        let playerindex = _.findIndex(players, function (p) {
             return p.id == player.id
         })
         let playersCopy = [...players];
@@ -55,19 +55,34 @@ function GameSetup(props) {
     const playerInputs = [];
     for (let i = 0; i < players.length; i++) {
         playerInputs.push(
-            <PlayerSetup i={i} type={localPlayer.id} onChangePlayerType={onChangePlayerType} doneUpdatingPlayer={doneUpdatingPlayer}/>
+            <PlayerSetup i={i} type={localPlayer.id} onChangePlayerType={onChangePlayerType} doneUpdatingPlayer={doneUpdatingPlayer} />
         )
     }
 
     return (
-        <div key="test">
-            <button onClick={() => dispatch({ type: 'START_GAME', players: players })} >Start Game</button>
-            <FormControl>
-                <InputLabel htmlFor="number-of-players" >Number of Players</InputLabel>
-                <Input id="number-of-players" defaultValue="2" type="number" inputProps={{ min: "2", max: "4" }} onChange={(e) => updatePlayerCount(e.target.value)} />
-            </FormControl>
-            {playerInputs}
-        </div>
+        <Grid
+            container
+            spacing={0}
+            direction="column"
+            alignItems="center"
+            justify="center"
+            style={{ minHeight: '100vh' }}>
+            <div style={{ backgroundColor: 'white', width: '50%' }} >
+                <Grid item>
+                    <FormControl fullWidth={true}>
+                        <InputLabel htmlFor="number-of-players" >Number of Players</InputLabel>
+                        <Input id="number-of-players" defaultValue="2" type="number" inputProps={{ min: "2", max: "4" }} onChange={(e) => updatePlayerCount(e.target.value)} />
+                    </FormControl>
+                </Grid>
+                <Grid item>
+                    {playerInputs}
+                </Grid>
+                <Grid item>
+                    <button onClick={() => dispatch({ type: 'START_GAME', players: players })} >Start Game</button>
+                </Grid>
+            </div>
+        </Grid >
+
     )
 }
 
