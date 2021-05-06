@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/splendor/static/css/main.4c362dfc.chunk.css",
+    "main.js": "/splendor/static/js/main.eaeee8ec.chunk.js",
+    "main.js.map": "/splendor/static/js/main.eaeee8ec.chunk.js.map",
+    "runtime-main.js": "/splendor/static/js/runtime-main.f4d1997e.js",
+    "runtime-main.js.map": "/splendor/static/js/runtime-main.f4d1997e.js.map",
+    "static/js/2.69feab96.chunk.js": "/splendor/static/js/2.69feab96.chunk.js",
+    "static/js/2.69feab96.chunk.js.map": "/splendor/static/js/2.69feab96.chunk.js.map",
+    "index.html": "/splendor/index.html",
+    "static/css/main.4c362dfc.chunk.css.map": "/splendor/static/css/main.4c362dfc.chunk.css.map",
+    "static/js/2.69feab96.chunk.js.LICENSE.txt": "/splendor/static/js/2.69feab96.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/splendor/static/media/sapphire.5361b8d5.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f4d1997e.js",
+    "static/js/2.69feab96.chunk.js",
+    "static/css/main.4c362dfc.chunk.css",
+    "static/js/main.eaeee8ec.chunk.js"
+  ]
+}
