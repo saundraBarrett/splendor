@@ -1,0 +1,21 @@
+.card-container {
+    min-height: 15vh;
+    .victory-points {
+        font-size: 3em;
+    }
+    .cost-container {
+        .cost {
+            border: solid 2px black;
+            border-radius: 50%;
+            background: orange;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .quantity {
+                color: white;
+            }
+        }
+    }
+}

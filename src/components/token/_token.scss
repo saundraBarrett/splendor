@@ -1,0 +1,44 @@
+@mixin tokenBorder($color) {
+    border: 5px solid $color;
+  }
+.token-container {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: solid 1px black;
+    overflow: hidden;
+    .token {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: 70%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: #772f1a;
+    }
+    .token-DIAMOND {
+        @include tokenBorder(white);
+        background-image: url("../../assets/gems/diamond.png");
+    }
+    .token-ONYX {
+        @include tokenBorder(black);
+        background-image: url("../../assets/gems/onyx.png");
+    }
+    .token-RUBY {
+        @include tokenBorder(red);
+        background-image: url("../../assets/gems/ruby.png")
+    }
+    .token-GOLD {
+        @include tokenBorder(gold);
+        background-image: url("../../assets/gems/gold.png")
+    }
+    .token-SAPPHIRE {
+        @include tokenBorder(blue);
+        background-image: url("../../assets/gems/sapphire.png");
+    }
+    .token-EMERALD {
+        @include tokenBorder(green);
+        background-image: url("../../assets/gems/emerald.png");
+    }
+}

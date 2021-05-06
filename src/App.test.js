@@ -1,15 +1,30 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
 import App from './App';
+import {getRandomInt } from './helpers';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import rootReducer from './redux/reducers';
+import { render as rtlRender, fireEvent } from "@testing-library/react";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
-test('renders learn react link', () => {
-  const { getByText } = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
+// set up render function to test with Redux 
+const render = (ui, initialStore = {}, options = {}) => {
+  const store = createStore(rootReducer, initialStore, applyMiddleware(thunk));
+  const Providers = ({ children }) => (
+    <Provider store={store}>{children}</Provider>
   );
+  return rtlRender(ui, { wrapper: Providers, ...options });
+};
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
+
+// Unit tests
+test('getRandomInt', () => {
+  expect(typeof getRandomInt(4) === "number").toBeTruthy();
+});
+
+it("game should start", () => {
+  const { getByText, queryByText } = render(<App/>);
+  expect(queryByText(/Save that fact/)).not.toBeInTheDocument();
+  fireEvent.click(getByText(/Start Game/));
 });
