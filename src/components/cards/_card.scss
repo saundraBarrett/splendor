@@ -1,14 +1,34 @@
 .card-container {
     min-height: 15vh;
     border: solid 1px black;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: 100% !important;
+    background-position: center !important;
     .victory-points {
         font-size: 3em;
+        padding-left: .25em;
+        padding-top: .15em;
+    }
+    &[class*="ONYX"] {
+        background: url('../../assets/cards/onyx.jpg');
+    }
+    &[class*="EMERALD"] {
+        background: url('../../assets/cards/emerald.jpg');
+    }
+    &[class*="SAPPHIRE"] {
+        background: url('../../assets/cards/sapphire.jpg');
+    }
+    &[class*="RUBY"] {
+        background: url('../../assets/cards/ruby.jpg');
+    }
+    &[class*="DIAMOND"] {
+        background: url('../../assets/cards/diamond.jpg');
     }
     .cost-container {
         .cost {
             border: solid 2px black;
             border-radius: 50%;
-            background: orange;
             height: 30px;
             width: 30px;
             display: flex;
@@ -17,21 +37,20 @@
             .quantity {
                 color: white;
             }
-            &.cost-RUBY {
-                background: red;
-            }
-            &.cost-SAPPHIRE {
-                background: blue;
-            }
-            &.cost-EMERALD {
-                background: green;
-            }
-            &.cost-DIAMOND {
-                background: white;
-            }
-            &.cost-ONYX {
-                background: black;
+        }
+        div[class*="_DIAMOND"] {
+            .quantity {
+                color: black;
             }
         }
     }
+    .gem-container {
+        img {
+            height: 50px;
+            padding: .5em;
+        }
+    }
+}
+button {
+    font-family: 'Libre Baskerville', serif !important;
 }

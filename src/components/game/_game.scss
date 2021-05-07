@@ -27,6 +27,13 @@ div[class*="player-count"] {
     @extend .shadow;
     border-radius: 10px;
     padding: .25em;
+    position: relative;
+        width: 50%;
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 50%;
+          }
     .card-badge {
         height: calc(99%);
     }
@@ -54,4 +61,5 @@ div[class*="_GOLD"] {
 }
 div[class*="_DIAMOND"] {
     background-color: $diamond;
+    color: black;
 }

@@ -36,7 +36,6 @@ export default function game(state = initialState, action) {
         ...state, gameState: 'started', players, cards: shuffleCards(cards), nobles: shuffleCards(nobles).slice(0, 4)
       }
     }
-
     // Find index of removed token from state; Remove token to board tokens and add to player tokens
     case (REMOVE_TOKEN_FROM_BOARD): {
       return {

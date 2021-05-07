@@ -7,7 +7,7 @@ function TokenStack(props) {
     let tokens = []
     // update to prop.token.qty when you want a stack of chips
     for (let i = 0; i < 1; i++) {
-        tokens.push(<Token token={props.token} onClickFunction={props.onClickFunction} />)
+        tokens.push(<Token key={"token_"+i} token={props.token} onClickFunction={props.onClickFunction} />)
     }
 
     return (

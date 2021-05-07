@@ -6,8 +6,8 @@ import GemImage from '../../common/gemImage';
 const CardHeader = (props) => {
     console.log(props)
     return (
-        < Box
-            className={'card card-' + props.card.gem}
+        < Grid item container
+            className={'card overlay card-' + props.card.gem}
             display="flex"
             p={1}
             m={2}
@@ -16,7 +16,7 @@ const CardHeader = (props) => {
             < Box flexGrow={1} textAlign="right" className="gem-container" justifyContent="flex-end" >
                 <GemImage gem={props.card.gem} />
             </Box >
-        </Box >
+        </Grid >
     )
 
 }

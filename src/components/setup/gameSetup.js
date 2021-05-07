@@ -55,7 +55,7 @@ function GameSetup(props) {
     const playerInputs = [];
     for (let i = 0; i < players.length; i++) {
         playerInputs.push(
-            <PlayerSetup i={i} type={localPlayer.id} onChangePlayerType={onChangePlayerType} doneUpdatingPlayer={doneUpdatingPlayer} />
+            <PlayerSetup key={"player-setup_"+i} i={i} type={localPlayer.id} onChangePlayerType={onChangePlayerType} doneUpdatingPlayer={doneUpdatingPlayer} />
         )
     }
 

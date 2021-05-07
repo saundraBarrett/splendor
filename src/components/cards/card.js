@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 // Setting up as a grid item from @material-ui
 function Card(props) {
     return (
-        <Grid item className="card-container">
+        <Grid item xs={2} style={{margin: '1em'}} className={"card-container " + props.card.gem + props.card.level}>
             <CardDialog card={props.card} activePlayer={props.activePlayer}/>
         </Grid >
     )

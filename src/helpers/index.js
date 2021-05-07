@@ -8,11 +8,7 @@ export function getRandomInt(max) {
       return _.shuffle(list)
   }
 
-
 export function checkCanAfford(card, player) {
-    console.log(player)
-    console.log(card)
-    console.log('checking if I can afford it')
     let cost = card.cost;
     for (let i = 0; i < cost.length; i++) {
         // if players tokens + cards with matching gem is less than the cost of the card, dont process
@@ -23,4 +19,13 @@ export function checkCanAfford(card, player) {
         }
     }
     return true;
+}
+
+export function checkCanReserve(player) {
+    if (player.reserved.length !== 3) {
+        return true
+    }
+    else {
+        return false;
+    }
 }

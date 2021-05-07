@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 // Render active player's space
 function PlayerSpace(props) {
     return (
-        <Grid container direction="row">
+        <Grid container direction="row" m={4}>
             <h2>{props.activePlayer.name}</h2>
             <PlayerTokens tokens={props.activePlayer.tokens} gems={props.activePlayer.gems} />
         </Grid>

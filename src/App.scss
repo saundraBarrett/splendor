@@ -2,7 +2,7 @@
 @import 'components/common/variables';
 
 html, body {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Libre Baskerville', serif !important;
   background: $tableGradient;
   height: 100%;
   margin: 0;

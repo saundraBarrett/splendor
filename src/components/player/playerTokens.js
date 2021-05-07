@@ -8,7 +8,8 @@ import Token from '../token/token';
 // display player tokens and gems
 function PlayerTokens(props) {
     return (
-        <Grid container direction="row">
+        <Grid container direction="row" margin={2}>
+            <Grid item xs={1}/>
             { props.tokens.map((token, i) => {
                 let gem = _.find(props.gems, function(g) { return g.id === token.id})
                 return (

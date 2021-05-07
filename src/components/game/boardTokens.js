@@ -30,7 +30,7 @@ function BoardTokens(props) {
     return (
         <Grid container direction="column">
             { props.gameTokens.map((token, i) => {
-                return (<TokenStack token={token} i={i} onClickFunction={updateChipCount} selectedChips={chips}/>)
+                return (<TokenStack key={"token-stack_"+i} token={token} i={i} onClickFunction={updateChipCount} selectedChips={chips}/>)
             })}
         </Grid>
     )
