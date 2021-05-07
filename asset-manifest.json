@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/splendor/static/css/main.4d140237.chunk.css",
-    "main.js": "/splendor/static/js/main.9aa44858.chunk.js",
-    "main.js.map": "/splendor/static/js/main.9aa44858.chunk.js.map",
+    "main.css": "/splendor/static/css/main.048b1697.chunk.css",
+    "main.js": "/splendor/static/js/main.d1dcb1dc.chunk.js",
+    "main.js.map": "/splendor/static/js/main.d1dcb1dc.chunk.js.map",
     "runtime-main.js": "/splendor/static/js/runtime-main.f4d1997e.js",
     "runtime-main.js.map": "/splendor/static/js/runtime-main.f4d1997e.js.map",
-    "static/js/2.776aa781.chunk.js": "/splendor/static/js/2.776aa781.chunk.js",
-    "static/js/2.776aa781.chunk.js.map": "/splendor/static/js/2.776aa781.chunk.js.map",
+    "static/js/2.4e3e73b9.chunk.js": "/splendor/static/js/2.4e3e73b9.chunk.js",
+    "static/js/2.4e3e73b9.chunk.js.map": "/splendor/static/js/2.4e3e73b9.chunk.js.map",
     "index.html": "/splendor/index.html",
-    "static/css/main.4d140237.chunk.css.map": "/splendor/static/css/main.4d140237.chunk.css.map",
-    "static/js/2.776aa781.chunk.js.LICENSE.txt": "/splendor/static/js/2.776aa781.chunk.js.LICENSE.txt",
+    "static/css/main.048b1697.chunk.css.map": "/splendor/static/css/main.048b1697.chunk.css.map",
+    "static/js/2.4e3e73b9.chunk.js.LICENSE.txt": "/splendor/static/js/2.4e3e73b9.chunk.js.LICENSE.txt",
+    "static/media/catherine_de_medici.413e18c4.jpeg": "/splendor/static/media/catherine_de_medici.413e18c4.jpeg",
     "static/media/App.scss": "/splendor/static/media/sapphire.5361b8d5.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f4d1997e.js",
-    "static/js/2.776aa781.chunk.js",
-    "static/css/main.4d140237.chunk.css",
-    "static/js/main.9aa44858.chunk.js"
+    "static/js/2.4e3e73b9.chunk.js",
+    "static/css/main.048b1697.chunk.css",
+    "static/js/main.d1dcb1dc.chunk.js"
   ]
 }
