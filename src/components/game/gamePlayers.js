@@ -19,7 +19,7 @@ function GamePlayers(props) {
                 return (
                     <div style={{ marginTop: '1em' }}>
                         <Badge badgeContent={player.victoryPoints} color="secondary">
-                            <Accordion>
+                            <Accordion disabled={player.active ? true : false}>
                                 <AccordionSummary>{player.name}</AccordionSummary>
                                 <AccordionDetails>
                                     <Grid container direction="row">
