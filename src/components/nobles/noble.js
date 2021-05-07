@@ -31,14 +31,14 @@ function Noble(props) {
     const [nobleImage, setNobleImage] = useState()
     
     return (
-        <Grid key={"noble-container_"+props.id} item xs={2} container className="noble-container" style={{ margin: '1em', backgroundImage: `url(${nobleImage})` }}>
-            <Grid item container xs={3} sm={2} className="overlay" direction="column" justify="flex-end">
+        <Grid key={"noble-container_"+props.id} item xs={7} container className="noble-container" style={{ margin: '1em', backgroundImage: `url(${nobleImage})` }}>
+            <Grid item container xs={4} sm={4} className="overlay" direction="column" justify="flex-end">
                 {_.map(props.noble.cost, function (cost) {
                     return <CardBadge key={'card-badge_'+cost.gem} gem={cost.gem} qty={cost.qty} />
                 })}
             </Grid>
-            <Grid item xs={6} sm={8}></Grid>
-            <Grid item container className="overlay " xs={3} sm={2} direction="column" justify="flex-end" alignContent="flex-end">
+            <Grid item xs={5} sm={5}></Grid>
+            <Grid item container className="overlay " xs={3} sm={3} direction="column" justify="flex-end" alignContent="flex-end">
                 <span style={{ fontSize: '2em', color: 'white' }}>{props.noble.victoryPoints}</span>
             </Grid>
         </Grid>

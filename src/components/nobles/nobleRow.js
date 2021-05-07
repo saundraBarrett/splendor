@@ -10,8 +10,6 @@ const mapStateToProps = (state) => {
 
 // Show all nobles on board
 function NobleRow(props) {
-
-    console.log(props)
     const [nobleImages, setNobleImages] = useState()
 
     useEffect(() => {
@@ -19,7 +17,6 @@ function NobleRow(props) {
           .then(res => res.json())
           .then(
             (result) => {
-                console.log(result)
                 setNobleImages(result)
             },
             (error) => {
@@ -29,7 +26,7 @@ function NobleRow(props) {
       }, [])
 
     return (
-        <Grid container>
+        <Grid container direction="column">
             {_.map(props.nobles, function (noble) {
                 return <Noble key={noble.id} noble={noble} nobleImages={nobleImages}/>
             })}

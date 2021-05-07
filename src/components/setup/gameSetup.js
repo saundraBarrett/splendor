@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormControl, Input, InputLabel, Grid } from '@material-ui/core';
+import { FormControl, Input, InputLabel, Grid, Button, TextField } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import _ from 'lodash';
 import PlayerSetup from './playerSetup';
@@ -12,8 +12,8 @@ function GameSetup(props) {
 
     // setting default players (2) to local type
     const defaultPlayers = [
-        { id: 0, type: localPlayer.id },
-        { id: 1, type: localPlayer.id }
+        { id: 0, type: localPlayer.id, name: "Player 0" },
+        { id: 1, type: localPlayer.id, name: "Player 1" }
     ]
 
     const dispatch = useDispatch()
@@ -40,7 +40,7 @@ function GameSetup(props) {
         // Add player and set as local player
         if (playerCount > players.length) {
             updatePlayers([
-                ...players, { type: localPlayer.id }
+                ...players, { type: localPlayer.id, name: `Player ${playerCount}` }
             ])
         }
         // Remove player
@@ -55,30 +55,42 @@ function GameSetup(props) {
     const playerInputs = [];
     for (let i = 0; i < players.length; i++) {
         playerInputs.push(
-            <PlayerSetup key={"player-setup_"+i} i={i} type={localPlayer.id} onChangePlayerType={onChangePlayerType} doneUpdatingPlayer={doneUpdatingPlayer} />
+            <PlayerSetup key={"player-setup_" + i} i={i} type={localPlayer.id} name={players[i].name} onChangePlayerType={onChangePlayerType} doneUpdatingPlayer={doneUpdatingPlayer} />
         )
     }
 
     return (
         <Grid
             container
-            spacing={0}
+            spacing={2}
             direction="column"
             alignItems="center"
             justify="center"
             style={{ minHeight: '100vh' }}>
-            <div style={{ backgroundColor: 'white', width: '50%' }} >
+            <div style={{ backgroundColor: 'white', width: '50%', padding: '1em' }} >
                 <Grid item>
-                    <FormControl fullWidth={true}>
-                        <InputLabel htmlFor="number-of-players" >Number of Players</InputLabel>
-                        <Input id="number-of-players" defaultValue="2" type="number" inputProps={{ min: "2", max: "4" }} onChange={(e) => updatePlayerCount(e.target.value)} />
+                    <FormControl fullWidth={true} style={{marginBottom: '1em'}}>
+                        <TextField
+                            id="number-of-players"
+                            label="Number of Players"
+                            type="number"
+                            defaultValue={2}
+                            inputProps={{
+                                min: "2", max: "4"
+                            }}
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            onChange={(e) => updatePlayerCount(e.target.value)} 
+                        />
+                        
                     </FormControl>
                 </Grid>
                 <Grid item>
                     {playerInputs}
                 </Grid>
                 <Grid item>
-                    <button onClick={() => dispatch({ type: 'START_GAME', players: players })} >Start Game</button>
+                    <Button fullWidth variant="contained" color="secondary" onClick={() => dispatch({ type: 'START_GAME', players: players })} >Start Game</Button>
                 </Grid>
             </div>
         </Grid >

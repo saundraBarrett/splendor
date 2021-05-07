@@ -4,9 +4,12 @@
     align-items: center;
     justify-content: center;
     margin-bottom: .25em;
+    font-size: 2em;
+    -webkit-text-stroke-width: 0.25px;
+    -webkit-text-stroke-color: black;
+    color: white;
     &.ONYX {
         background-color: $onyx;
-        color: white;
     }
     &.RUBY {
         background-color: $ruby
@@ -22,5 +25,6 @@
     }
     &.DIAMOND {
         background-color: $diamond;
+        color: black;
     }
 }

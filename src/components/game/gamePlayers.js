@@ -2,7 +2,11 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid/Grid';
 import { connect } from 'react-redux';
-import { Badge } from '@material-ui/core';
+import { Badge, Tab, Tabs } from '@material-ui/core';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import PlayerTokens from '../player/playerTokens';
 
 const mapStateToProps = (state) => {
     return { players: state.game.players }
@@ -10,14 +14,25 @@ const mapStateToProps = (state) => {
 
 function GamePlayers(props) {
     return (
-        <Grid container direction="column" style={{marginTop: '2em'}}>
-            { props.players.map((player, i) => {
+        <Grid container direction="column">
+            {props.players.map((player, i) => {
                 return (
-                <Badge color="primary" badgeContent={0}>
-                    <div style={{height: '10vh', backgroundColor: 'red', width: '100%', marginBottom: '1em', borderRadius: '0 10px 10px 0'}}>{player.name}</div>
-                </Badge>
+                    <div style={{ marginTop: '1em' }}>
+                        <Badge badgeContent={player.victoryPoints} color="secondary">
+                            <Accordion>
+                                <AccordionSummary>{player.name}</AccordionSummary>
+                                <AccordionDetails>
+                                    <Grid container direction="row">
+                                        <h3>Points: {player.victoryPoints}</h3>
+                                        <PlayerTokens tokens={player.tokens} gems={player.gems} />
+                                    </Grid>
+                                </AccordionDetails>
+                            </Accordion>
+                        </Badge>
+                    </div>
                 )
             })}
+
         </Grid>
     )
 }

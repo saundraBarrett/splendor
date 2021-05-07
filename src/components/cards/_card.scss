@@ -1,29 +1,32 @@
 .card-container {
-    min-height: 15vh;
+    min-height: 20vh;
     border: solid 1px black;
     border-radius: 10px;
     overflow: hidden;
     background-size: 100% !important;
     background-position: center !important;
     .victory-points {
-        font-size: 3em;
-        padding-left: .25em;
-        padding-top: .15em;
+        font-size: 2.5em;
+        padding-left: 0.25em;
+        padding-top: 0.15em;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        color: white;
     }
     &[class*="ONYX"] {
-        background: url('../../assets/cards/onyx.jpg');
+        background: url("../../assets/cards/onyx.jpg");
     }
     &[class*="EMERALD"] {
-        background: url('../../assets/cards/emerald.jpg');
+        background: url("../../assets/cards/emerald.jpg");
     }
     &[class*="SAPPHIRE"] {
-        background: url('../../assets/cards/sapphire.jpg');
+        background: url("../../assets/cards/sapphire.jpg");
     }
     &[class*="RUBY"] {
-        background: url('../../assets/cards/ruby.jpg');
+        background: url("../../assets/cards/ruby.jpg");
     }
     &[class*="DIAMOND"] {
-        background: url('../../assets/cards/diamond.jpg');
+        background: url("../../assets/cards/diamond.jpg");
     }
     .cost-container {
         .cost {
@@ -47,10 +50,10 @@
     .gem-container {
         img {
             height: 50px;
-            padding: .5em;
+            padding: 0.5em;
         }
     }
 }
 button {
-    font-family: 'Libre Baskerville', serif !important;
+    font-family: "Libre Baskerville", serif !important;
 }

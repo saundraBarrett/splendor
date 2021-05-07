@@ -4,42 +4,26 @@ import {getRandomInt } from './helpers';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './redux/reducers';
-import { render as rtlRender, fireEvent } from "@testing-library/react";
+import { render , fireEvent } from "@testing-library/react";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-
-// set up render function to test with Redux 
-const render = (ui, initialStore = {}, options = {}) => {
-  const store = createStore(rootReducer, initialStore, applyMiddleware(thunk));
-  const Providers = ({ children }) => (
-    <Provider store={store}>{children}</Provider>
-  );
-  return rtlRender(ui, { wrapper: Providers, ...options });
-};
-
+import PlayerSetup from '../src/components/setup/playerSetup';
+import { mount } from 'enzyme';
 
 // Unit tests
-test('getRandomInt', () => {
+test('random integer need to pass back number', () => {
   expect(typeof getRandomInt(4) === "number").toBeTruthy();
+  expect(typeof getRandomInt(undefined) == "number").toBeTruthy();
+  expect(typeof getRandomInt("string") == "number").toBeTruthy();
+  expect(typeof getRandomInt("0") == "number").toBeTruthy();
 });
 
-it("game should start", () => {
-  const { getByText, queryByText } = render(<App/>);
-  expect(queryByText(/Save that fact/)).not.toBeInTheDocument();
-  fireEvent.click(getByText(/Start Game/));
-});
-
-
-describe('validation', () => {
-  describe('can buy card', () => {
-    const f = require('app/validates').canBuyCard;
-    it('should return true if player can buy a card', () => {
-      assert.equal(f(player, cardCanAfford1), true);
-      assert.equal(f(player, cardCanAfford2), true);
-    });
-
-    it('should return false if player cannot buy a card', () => {
-      assert.equal(f(player, cardCantAfford), false);
-    });
-  });
-});
+test('player name not blank', () => {
+  function doneUpdatingPlayer() {
+    console.log('Done Updating Player')
+  };
+  const utils = render(<PlayerSetup i={1} doneUpdatingPlayer={doneUpdatingPlayer}/>)
+  const input = utils.getByLabelText('Player Name:')
+  fireEvent.change(input, { target: { value: '' } })
+  expect(input.value).toBeEmpty()
+})

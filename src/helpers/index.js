@@ -1,7 +1,13 @@
 import _ from 'lodash';
 
 export function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+    if (max instanceof Number) {
+        return Math.floor(Math.random() * max);
+    }
+    else {
+        return 0;
+    }
+    
   }
 
   export function shuffleCards(list) {
