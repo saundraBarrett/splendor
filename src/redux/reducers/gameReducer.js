@@ -68,7 +68,6 @@ export default function game(state = initialState, action) {
       // take card from board by removing from card array
       let cardIndex = _.findIndex(state.cards, function (card) { return card.id === action.card.id })
       let gemIndex = _.findIndex(state.tokens, function (token) { return token.gem === action.card.gem })
-      console.log(action.card)
       const cloneCards = [...state.cards]
       cloneCards.splice(cardIndex, 1)
       // this should put a new card on the board - how do we preserve the location? 
@@ -111,13 +110,11 @@ export default function game(state = initialState, action) {
     }
     // Find current player and choose the next player based on the number of players
     case (END_PLAYER_TURN): {
-      console.log('ending player turn')
       let currentPlayer = _.findIndex(state.players, function (player) { return player.active })
       let nextPlayerIndex = currentPlayer + 1;
       if (!state.players[nextPlayerIndex]) {
         nextPlayerIndex = 0;
       }
-      console.log(nextPlayerIndex)
       return {
         ...state,
         players: state.players.map((player, i) => ({

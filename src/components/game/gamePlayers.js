@@ -12,6 +12,8 @@ const mapStateToProps = (state) => {
     return { players: state.game.players }
 }
 
+// Display a list of accordions and show player details
+// TODO: break accordion into sub component
 function GamePlayers(props) {
     return (
         <Grid container direction="column">

@@ -3,8 +3,8 @@ import { Box, Grid, Paper, Typography, Button } from '@material-ui/core';
 import { connect, useDispatch } from 'react-redux';
 import GemImage from '../../common/gemImage';
 
+// Design Card Header
 const CardHeader = (props) => {
-    console.log(props)
     return (
         < Grid item container
             className={'card overlay card-' + props.card.gem}

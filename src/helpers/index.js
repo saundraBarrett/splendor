@@ -14,12 +14,12 @@ export function getRandomInt(max) {
       return _.shuffle(list)
   }
 
+// global function to check if player can afford card
 export function checkCanAfford(card, player) {
     let cost = card.cost;
     for (let i = 0; i < cost.length; i++) {
         // if players tokens + cards with matching gem is less than the cost of the card, dont process
         let activePlayerGemCount = _.find(player.tokens, { "gem": cost[i].gem }).qty + _.find(player.tokens, { "gem": cost[i].gem }).qty
-        console.log(activePlayerGemCount)
         if (activePlayerGemCount < cost[i].qty) {
                 return false;
         }
@@ -27,6 +27,7 @@ export function checkCanAfford(card, player) {
     return true;
 }
 
+// global function to check if player can reserve more cards
 export function checkCanReserve(player) {
     if (player.reserved.length !== 3) {
         return true
