@@ -4,6 +4,9 @@ This project is a fun project to turn one of my favorite board games into a Reac
 ## Motivation
 The motiviation behind this is my wonderful nephew, C, who is an avid gamer. C is going after a merit badge in boy scouts for coding and I wanted to show him what cool things he can do if he keeps up the hard work. Also, it's just fun!
 
+## Demo
+The demo is currently hosted on github pages and can be found [here](https://saundrabarrett.github.io/splendor/).
+
 ## Technology
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
